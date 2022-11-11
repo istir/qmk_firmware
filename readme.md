@@ -1,5 +1,27 @@
 # Quantum Mechanical Keyboard Firmware
 
+## Keychron Q2 ANSI KNOB Firmware Changelog
+
+### Added
+
+- [QMK-2] Implemented ability to change RGB value and swap songs with volume knob rotation
+
+### Changed
+
+- [QMK-1] Changed default keymap
+- [QMK-2] Faster volume steps
+
+### Future development plans
+
+- Remapping most of the useful shortcuts used in Power Toys -> key overrides
+- Moving to previous song with knob should allow to use it twice without releasing the press - first rotation for skipping to start of the song, second for skipping to the previous one
+- RGB presets
+- default RGB as one of the presets
+- Caps lock should change the RGB of the whole board to one of presets (red)
+- Tap dance - double tap knob (maybe)
+
+---
+
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
 [![Discord](https://img.shields.io/discord/440868230475677696.svg)](https://discord.gg/Uq7gcHh)
 [![Docs Status](https://img.shields.io/badge/docs-ready-orange.svg)](https://docs.qmk.fm)
@@ -10,7 +32,7 @@ This is a keyboard firmware based on the [tmk\_keyboard firmware](https://github
 
 ## Documentation
 
-* [See the official documentation on docs.qmk.fm](https://docs.qmk.fm)
+- [See the official documentation on docs.qmk.fm](https://docs.qmk.fm)
 
 The docs are powered by [Docsify](https://docsify.js.org/) and hosted on [GitHub](/docs/). They are also viewable offline; see [Previewing the Documentation](https://docs.qmk.fm/#/contributing?id=previewing-the-documentation) for more details.
 
@@ -18,12 +40,12 @@ You can request changes by making a fork and opening a [pull request](https://gi
 
 ## Supported Keyboards
 
-* [Planck](/keyboards/planck/)
-* [Preonic](/keyboards/preonic/)
-* [ErgoDox EZ](/keyboards/ergodox_ez/)
-* [Clueboard](/keyboards/clueboard/)
-* [Cluepad](/keyboards/clueboard/17/)
-* [Atreus](/keyboards/atreus/)
+- [Planck](/keyboards/planck/)
+- [Preonic](/keyboards/preonic/)
+- [ErgoDox EZ](/keyboards/ergodox_ez/)
+- [Clueboard](/keyboards/clueboard/)
+- [Cluepad](/keyboards/clueboard/17/)
+- [Atreus](/keyboards/atreus/)
 
 The project also includes community support for [lots of other keyboards](/keyboards/).
 
