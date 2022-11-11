@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS,                            KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
 };
 
-#if defined(ENCODER_MAP_ENABLE)
+// #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [MAC_BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [WIN_BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
@@ -80,7 +80,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [_FN2]     = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
     [_FN3]     = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
 };
-#endif
+// #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {

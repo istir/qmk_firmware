@@ -16,6 +16,8 @@
 
 #pragma once
 
+#define TAPPING_TERM 200
+
 /* key matrix size */
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 15
