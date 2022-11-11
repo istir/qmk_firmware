@@ -1,6 +1,8 @@
 /* istir - 11.11.2022
  * This file handles knob rotation. Notable cases:
- * Knob
+ * Knob triggers on release instead of on press
+ * Holding down knob and rotating it does an action (skips songs)
+ * Holding down a key and rotating knob does an action (changes RGB value)
  */
 
 #include QMK_KEYBOARD_H
