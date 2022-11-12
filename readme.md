@@ -12,6 +12,7 @@
 - [QMK-2] Faster volume steps
 - [QMK-3] Disable processing volume up/down when knob is held
 - [QMK-4] Allow two rotations CCW with pressed knob to play song from the start of the previous song
+- [QMK-5] Add support for fn1 press and rotations
 
 ### Future development plans
 

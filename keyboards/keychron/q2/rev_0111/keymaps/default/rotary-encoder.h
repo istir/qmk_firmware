@@ -16,6 +16,7 @@ bool should_send_play_pause_on_release    = true;
 int  number_of_clockwise_rotations        = 0;
 int  number_of_counterclockwise_rotations = 0;
 
+bool is_fn1_pressed = false;
 bool is_fn2_pressed = false;
 
 /* ------------------------------- knob press ------------------------------- */
@@ -36,6 +37,17 @@ bool process_play_pause_rotary_encoder(keyrecord_t *record) {
         return true;
     }
     return false;
+}
+
+/* -------------------------------- FN1 press ------------------------------- */
+
+bool process_fn1_key(keyrecord_t *record) {
+    if (record->event.pressed) {
+        is_fn1_pressed = true;
+    } else {
+        is_fn1_pressed = false;
+    }
+    return true;
 }
 
 /* -------------------------------- FN2 press ------------------------------- */
@@ -65,12 +77,20 @@ void handle_knob_rotation(bool clockwise) {
             tap_code(clockwise ? KC_MNXT : KC_MPRV);
         }
     } else {
+        //* when fn1 is pressed
+        if (is_fn1_pressed) {
+            clockwise ? rgblight_increase_hue() : rgblight_decrease_hue();
+
+            return;
+        }
+        //* when fn2 is pressed
         if (is_fn2_pressed) {
             clockwise ? rgblight_increase_val() : rgblight_decrease_val();
-        } else {
-            for (int i = 0; i < VOLUME_MULTIPLICATION; i++) {
-                tap_code(clockwise ? KC_VOLU : KC_VOLD);
-            }
+            return;
+        }
+        //* when nothing is pressed
+        for (int i = 0; i < VOLUME_MULTIPLICATION; i++) {
+            tap_code(clockwise ? KC_VOLU : KC_VOLD);
         }
     }
 }
