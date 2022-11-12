@@ -11,11 +11,12 @@
 - [QMK-1] Changed default keymap
 - [QMK-2] Faster volume steps
 - [QMK-3] Disable processing volume up/down when knob is held
+- [QMK-4] Allow two rotations CCW with pressed knob to play song from the start of the previous song
 
 ### Future development plans
 
+- CAPS-LOCK should enable SHIFT_LOCK
 - Remapping most of the useful shortcuts used in Power Toys -> key overrides
-- Moving to previous song with knob should allow to use it twice without releasing the press - first rotation for skipping to start of the song, second for skipping to the previous one
 - RGB presets
 - default RGB as one of the presets
 - Caps lock should change the RGB of the whole board to one of presets (red)
