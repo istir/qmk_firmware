@@ -10,6 +10,7 @@
 
 - [QMK-1] Changed default keymap
 - [QMK-2] Faster volume steps
+- [QMK-3] Disable processing volume up/down when knob is held
 
 ### Future development plans
 
