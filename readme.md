@@ -9,6 +9,7 @@
 - [QMK-5] Add support for fn1 press and rotations
 - [QMK-6] Add Caps Word functionality
 - [QMK-9] Support for changing monitor brightness
+- [QMK-8] RGB functionality, different RGB in different states
 
 ### Changed
 
@@ -23,9 +24,11 @@
 
 ### Future development plans
 
-- Remapping most of the useful shortcuts used in Power Toys -> key overrides
+- RGB reacting to changing Hue/Saturation
+- RGB preset on layers
 - RGB presets
-- default RGB as one of the presets
+- Custom RGB animations
+- Remapping most of the useful shortcuts used in Power Toys -> key overrides
 - Caps lock should change the RGB of the whole board to one of presets (red)
 - Tap dance - double tap knob (maybe)
 
