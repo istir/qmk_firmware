@@ -18,6 +18,8 @@
 
 #define DEFAULT_LAYER_KNOB_PRESS_ACTION KC_MPLY
 
+#include "custom-keys-pressed.h"
+
 #ifdef USE_MANUAL_KNOB_CONTROL
     #include "rotary-encoder.h"
 #endif
@@ -108,10 +110,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case DEFAULT_LAYER_KNOB_PRESS_ACTION:
            return process_play_pause_rotary_encoder(record);
         case MO(_FN2):
-            return process_fn1_key(record);
+            set_fn1_pressed_state(record->event.pressed);
+            return true;
         case MO(_FN3):
-            return process_fn2_key(record);
+            set_fn2_pressed_state(record->event.pressed);
+            return true;
             #endif
+        case CAPS_WORD:
+            set_capslock_pressed_state();
+            return true;
         default:
             return true;  // Process all other keycodes normally
     }

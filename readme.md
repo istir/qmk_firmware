@@ -5,15 +5,19 @@
 ### Added
 
 - [QMK-2] Implemented ability to change RGB value and swap songs with volume knob rotation
+- [QMK-4] Allow two rotations CCW with pressed knob to play song from the start of the previous song
+- [QMK-5] Add support for fn1 press and rotations
+- [QMK-6] Add Caps Word functionality
 
 ### Changed
 
 - [QMK-1] Changed default keymap
 - [QMK-2] Faster volume steps
 - [QMK-3] Disable processing volume up/down when knob is held
-- [QMK-4] Allow two rotations CCW with pressed knob to play song from the start of the previous song
-- [QMK-5] Add support for fn1 press and rotations
-- [QMK-6] Add Caps Word functionality
+- [QMK-7] Cleaner custom keypress functionality
+
+### Fixed
+
 - [FIX/QMK-5] Added back FN1 functionality
 
 ### Future development plans
