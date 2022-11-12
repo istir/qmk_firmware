@@ -13,10 +13,10 @@
 - [QMK-3] Disable processing volume up/down when knob is held
 - [QMK-4] Allow two rotations CCW with pressed knob to play song from the start of the previous song
 - [QMK-5] Add support for fn1 press and rotations
+- [QMK-6] Add Caps Word functionality
 
 ### Future development plans
 
-- CAPS-LOCK should enable SHIFT_LOCK
 - Remapping most of the useful shortcuts used in Power Toys -> key overrides
 - RGB presets
 - default RGB as one of the presets
