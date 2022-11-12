@@ -107,6 +107,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             #ifdef USE_MANUAL_KNOB_CONTROL
         case DEFAULT_LAYER_KNOB_PRESS_ACTION:
            return process_play_pause_rotary_encoder(record);
+        case MO(_FN2):
+            return process_fn1_key(record);
         case MO(_FN3):
             return process_fn2_key(record);
             #endif
