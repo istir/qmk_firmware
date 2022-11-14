@@ -130,5 +130,5 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void keyboard_post_init_user(void) {
     //set default RGB mode
-    rgb_matrix_mode(RGB_MATRIX_CUSTOM_DEFAULT);
+    switch_to_preset(DEFAULT_PRESET);
 };

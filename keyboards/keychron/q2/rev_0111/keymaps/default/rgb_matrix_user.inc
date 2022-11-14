@@ -12,8 +12,9 @@ int get_correct_brightness_value(int base_value) {
 
 static bool CAPSLOCK(effect_params_t* params) {
     RGB_MATRIX_USE_LIMITS(led_min, led_max);
-    
-    HSV      hsv  = (HSV){0, 200, get_correct_brightness_value(255)};
+    // rgb_matrix_config.hsv.v = 255;
+    // HSV hsv = (HSV){0, 200, get_correct_brightness_value(255)};
+    HSV      hsv  = (HSV){0, 200, rgb_matrix_config.hsv.v};
     uint16_t time = scale16by8(g_rgb_timer, rgb_matrix_config.speed / 8);
     hsv.v         = scale8(abs8(sin8(time) - 128) * 2, hsv.v);
     RGB rgb       = rgb_matrix_hsv_to_rgb(hsv);
@@ -25,9 +26,11 @@ static bool CAPSLOCK(effect_params_t* params) {
 
 static bool DEFAULT(effect_params_t* params) {
     RGB_MATRIX_USE_LIMITS(led_min, led_max);
-    HSV hsv = (HSV){0, 72, get_correct_brightness_value(80)};
+    // rgb_matrix_config.hsv.v = 130;
+    // HSV hsv = (HSV){0, 72, get_correct_brightness_value(130)};
+    HSV hsv = (HSV){0, 72, rgb_matrix_config.hsv.v};
     RGB rgb = rgb_matrix_hsv_to_rgb(hsv);
-    
+
     for (uint8_t i = led_min; i < led_max; i++) {
         rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
     }
