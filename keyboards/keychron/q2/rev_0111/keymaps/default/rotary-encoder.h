@@ -55,7 +55,7 @@ void handle_knob_rotation(bool clockwise) {
     } else {
         //* when fn1 is pressed
         if (get_fn1_pressed_state()) {
-            clockwise ? rgblight_increase_hue() : rgblight_decrease_hue();
+            tap_code(clockwise?KC_F14:KC_F13);
             return;
         }
         //* when fn2 is pressed

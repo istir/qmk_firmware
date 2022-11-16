@@ -8,6 +8,7 @@
 - [QMK-4] Allow two rotations CCW with pressed knob to play song from the start of the previous song
 - [QMK-5] Add support for fn1 press and rotations
 - [QMK-6] Add Caps Word functionality
+- [QMK-9] Support for changing monitor brightness
 
 ### Changed
 
