@@ -29,8 +29,12 @@
 #define ENCODER_RESOLUTION 4
 
 // rotary-encoder.h
-#define USE_MANUAL_KNOB_CONTROL true
+#define USE_MANUAL_KNOB_CONTROL
 
 //rgb-light.h
-#define USE_CUSTOM_RGB_PRESETS true
+#define USE_CUSTOM_RGB_PRESETS
 #define RGB_MATRIX_KEYPRESSES 
+
+//caps word
+#define CAPS_WORD_IDLE_TIMEOUT 0 //disable timeout
+#define CAPS_WORD_NO_AUTO_DEACTIVATION //disable automatic deactivation on some keys 

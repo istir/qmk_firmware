@@ -17,6 +17,7 @@
 - [QMK-2] Faster volume steps
 - [QMK-3] Disable processing volume up/down when knob is held
 - [QMK-7] Cleaner custom keypress functionality
+- [QMK-10] Change caps word so it doesn't turn off by itself
 
 ### Fixed
 
@@ -25,7 +26,6 @@
 ### Future development plans
 
 - Double tap home for a screenshot
-- Remove breathing animation on Caps or change it so it begins only when swapped to it
 - RGB reacting to changing Hue/Saturation
 - RGB preset on layers
 - RGB presets
