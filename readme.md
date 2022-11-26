@@ -24,8 +24,7 @@
 
 ### Future development plans
 
-- Double tap home for a screenshot 
-- Instead of capping brightness (like now, it's 80* whatever percent), it would be a better idea to change the brightness and then let increase it 
+- Double tap home for a screenshot
 - Remove breathing animation on Caps or change it so it begins only when swapped to it
 - RGB reacting to changing Hue/Saturation
 - RGB preset on layers
@@ -34,6 +33,7 @@
 - Remapping most of the useful shortcuts used in Power Toys -> key overrides
 - Caps lock should change the RGB of the whole board to one of presets (red)
 - Tap dance - double tap knob (maybe)
+- knob acceleration
 
 ---
 
