@@ -1,6 +1,6 @@
 /* istir - 12.11.2022 - 26.11.2022
  * This file handles rgb switching.
- * It also handles correctly setting brightness 
+ * It also handles correctly setting brightness
  */
 
 const int DEFAULT_PRESET_BRIGHTNESS   = 130;
@@ -26,9 +26,11 @@ void set_brightness(int value) {
     rgb_matrix_config.hsv.v = brightness;
 }
 
+#ifdef CAPS_WORD_ENABLE
 void caps_word_set_user(bool active) {
     switch_to_preset(CAPS_LOCK_PRESET);
 }
+#endif
 
 void switch_to_default_preset() {
     rgb_matrix_mode(RGB_MATRIX_CUSTOM_DEFAULT);
@@ -56,7 +58,11 @@ void switch_to_preset(int preset) {
             break;
         case CAPS_LOCK_PRESET:
             set_brightness(CAPS_LOCK_PRESET_BRIGHTNESS);
+#ifdef CAPS_WORD_ENABLE
             switch_to_caps_lock_preset(is_caps_word_on());
+#else
+            switch_to_caps_lock_preset(host_keyboard_led_state().caps_lock);
+#endif
             break;
         default:
             break;

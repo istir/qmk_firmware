@@ -10,6 +10,7 @@
 - [QMK-6] Add Caps Word functionality
 - [QMK-9] Support for changing monitor brightness
 - [QMK-8] RGB functionality, different RGB in different states
+- [QMK-11] Moved some software shortcuts to hardware
 
 ### Changed
 

@@ -17,20 +17,28 @@
 #include QMK_KEYBOARD_H
 
 #define DEFAULT_LAYER_KNOB_PRESS_ACTION KC_MPLY
-#define DEFAULT_CAPS_KEY CAPSWRD
 
-#include "custom-keys-pressed.h"
+
+
+#include "custom-keys-shortcuts.h"
 
 #ifdef USE_CUSTOM_RGB_PRESETS
     #include "rgb-light.h"
 #endif
+
+#include "custom-keys-pressed.h"
+
 #ifdef USE_MANUAL_KNOB_CONTROL
     #include "rotary-encoder.h"
 #endif
 #ifdef CAPS_WORD_ENABLE
-    #include "custom_caps_word.h"
+    #include "custom-caps-word.h"
+    #define DEFAULT_CAPS_KEY CAPSWRD
+    // #define DEFAULT_HOME_KEY TD(TD_FULL_SCREENSHOT)
+#else 
+    #define DEFAULT_CAPS_KEY KC_CAPS
+    // #define DEFAULT_HOME_KEY KC_HOME
 #endif
-
 
 enum layers{
     MAC_BASE,
@@ -125,7 +133,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return true;
             #endif
         case DEFAULT_CAPS_KEY:
-            set_capslock_pressed_state();
+            set_capslock_pressed_state(record->event.pressed);
             return true;
         default:
             return true;  // Process all other keycodes normally
