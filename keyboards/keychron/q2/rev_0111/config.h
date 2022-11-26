@@ -30,3 +30,7 @@
 
 // rotary-encoder.h
 #define USE_MANUAL_KNOB_CONTROL true
+
+//rgb-light.h
+#define USE_CUSTOM_RGB_PRESETS true
+#define RGB_MATRIX_KEYPRESSES 
