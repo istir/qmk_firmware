@@ -61,6 +61,7 @@ void handle_knob_rotation(bool clockwise) {
         //* when fn2 is pressed
         if (get_fn2_pressed_state()) {
             clockwise ? rgblight_increase_val() : rgblight_decrease_val();
+            preset_brightnesses[current_preset] = rgb_matrix_config.hsv.v;
             return;
         }
         //* when nothing is pressed
