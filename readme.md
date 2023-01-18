@@ -10,6 +10,7 @@
 - [QMK-6] Add Caps Word functionality
 - [QMK-9] Support for changing monitor brightness
 - [QMK-8] RGB functionality, different RGB in different states
+- [QMK-11] Moved some software shortcuts to hardware
 
 ### Changed
 
@@ -25,7 +26,9 @@
 
 ### Future development plans
 
-- Double tap home for a screenshot
+- !! RGB Is currently not working as expected - caps lock preset doesn't get correct brightness
+- ! RGB preset - gradient from almost-caps-lock at the bottom to default at the top
+- RGB preset - animated with only specified colors
 - RGB reacting to changing Hue/Saturation
 - RGB preset on layers
 - RGB presets

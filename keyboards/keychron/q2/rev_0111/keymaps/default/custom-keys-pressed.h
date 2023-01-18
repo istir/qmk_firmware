@@ -7,10 +7,14 @@ typedef struct {
 
 custom_pressed_t custom_pressed_keys = {false, false, false, false};
 
-
 /* -------------------------------- caps lock ------------------------------- */
-void set_capslock_pressed_state(void) {
-    custom_pressed_keys.caps_lock = is_caps_word_on();
+void set_capslock_pressed_state(bool pressed) {
+#ifdef CAPS_WORD_ENABLE
+    custom_pressed_keys.caps_lock is_caps_word_on();
+#else
+    custom_pressed_keys.caps_lock = pressed;
+    switch_to_preset(CAPS_LOCK_PRESET);
+#endif
 }
 bool get_capslock_pressed_state(void) {
     return custom_pressed_keys.caps_lock;
