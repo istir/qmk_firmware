@@ -35,7 +35,7 @@ static bool CAPSLOCK(effect_params_t* params) {
     HSV hsv = (HSV){0, 200, rgb_matrix_config.hsv.v};
     RGB rgb = rgb_matrix_hsv_to_rgb(hsv);
     //* Set modifiers to color
-    int modifier_keycodes[] = {0, 16, 30, 44, 57, 58, 59, 60, 61, 62, 63, 64, 66, 55, 56, 42, 43, 28, 29, 13};
+    int modifier_keycodes[] = {0, 15, 30, 44, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 55, 56, 42, 43, 28, 29, 13};
 
     for (uint8_t i = led_min; i < led_max; i++) {
         for (size_t j = 0; j < sizeof(modifier_keycodes) / sizeof(modifier_keycodes[0]); j++) {

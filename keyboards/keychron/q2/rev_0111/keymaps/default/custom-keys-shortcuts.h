@@ -27,14 +27,15 @@ combo_t key_combos[CUSTOM_COMBO_LENGTH] = {
 #endif
 
 #ifdef KEY_OVERRIDE_ENABLE
-const key_override_t REGION_OVERRIDE_SCREENSHOT = ko_make_with_layers_negmods_and_options(MOD_MASK_SG, KC_S, KC_PRINT_SCREEN, ~0, MOD_MASK_CA, ko_option_no_reregister_trigger);
-const key_override_t SEARCH_OVERRIDE            = ko_make_with_layers_negmods_and_options(MOD_MASK_GUI, KC_A, LWIN(LCTL(KC_A)), ~0, MOD_MASK_CSA, ko_option_no_reregister_trigger);
-const key_override_t SEARCH_OVERRIDE_MAC_LIKE   = ko_make_with_layers_negmods_and_options(MOD_MASK_CTRL, KC_SPACE, LWIN(LCTL(KC_A)), ~0, MOD_MASK_CSG, ko_option_no_reregister_trigger);
-const key_override_t EVERYTHING_SEARCH_OVERRIDE = ko_make_with_layers_negmods_and_options(MOD_MASK_GUI, KC_S, LWIN(LALT(KC_S)), ~0, MOD_MASK_CSA, ko_option_no_reregister_trigger);
-const key_override_t CLOSE_WINDOW_OVERRIDE      = ko_make_with_layers_negmods_and_options(MOD_MASK_CA, KC_Q, LALT(KC_F4), ~0, MOD_MASK_SG, ko_option_no_reregister_trigger);
-const key_override_t OPEN_TERMINAL_OVERRIDE     = ko_make_with_layers_negmods_and_options(MOD_MASK_GUI, KC_RETURN, LCTL(LALT(KC_LBRACKET)), ~0, MOD_MASK_CSA, ko_option_no_reregister_trigger);
+const key_override_t REGION_OVERRIDE_SCREENSHOT = ko_make_with_layers_negmods_and_options(MOD_MASK_SG, KC_S, KC_PRINT_SCREEN, (1 << 1), MOD_MASK_CA, ko_option_no_reregister_trigger);
+const key_override_t SEARCH_OVERRIDE            = ko_make_with_layers_negmods_and_options(MOD_MASK_GUI, KC_A, LWIN(LCTL(KC_A)), (1 << 1), MOD_MASK_CSA, ko_option_no_reregister_trigger);
+const key_override_t SEARCH_OVERRIDE_MAC_LIKE   = ko_make_with_layers_negmods_and_options(MOD_MASK_CTRL, KC_SPACE, LWIN(LCTL(KC_A)), (1 << 1), MOD_MASK_CSG, ko_option_no_reregister_trigger);
+const key_override_t EVERYTHING_SEARCH_OVERRIDE = ko_make_with_layers_negmods_and_options(MOD_MASK_GUI, KC_S, LWIN(LALT(KC_S)), (1 << 1), MOD_MASK_CSA, ko_option_no_reregister_trigger);
+const key_override_t CLOSE_WINDOW_OVERRIDE      = ko_make_with_layers_negmods_and_options(MOD_MASK_CA, KC_Q, LALT(KC_F4), (1 << 1), MOD_MASK_SG, ko_option_no_reregister_trigger);
+const key_override_t OPEN_TERMINAL_OVERRIDE     = ko_make_with_layers_negmods_and_options(MOD_MASK_GUI, KC_RETURN, LCTL(LALT(KC_LBRACKET)), (1 << 1), MOD_MASK_CSA, ko_option_no_reregister_trigger);
 
 //* Mac-like combos
+
 // const key_override_t COPY_OVERRIDE         = ko_make_with_layers_negmods_and_options(MOD_MASK_ALT, KC_C, LCTL(KC_C), ~0, MOD_MASK_CSG, ko_option_activation_negative_mod_up);
 // const key_override_t CUT_OVERRIDE          = ko_make_with_layers_negmods_and_options(MOD_MASK_ALT, KC_X, LCTL(KC_X), ~0, MOD_MASK_CSG, ko_option_activation_negative_mod_up);
 // const key_override_t PASTE_OVERRIDE        = ko_make_with_layers_negmods_and_options(MOD_MASK_ALT, KC_V, LCTL(KC_V), ~0, MOD_MASK_CSG, ko_option_activation_negative_mod_up);
