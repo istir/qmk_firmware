@@ -32,8 +32,8 @@
 #define USE_MANUAL_KNOB_CONTROL
 
 //rgb-light.h
-#define USE_CUSTOM_RGB_PRESETS
-#define RGB_MATRIX_KEYPRESSES 
+// #define USE_CUSTOM_RGB_PRESETS
+// #define RGB_MATRIX_KEYPRESSES 
 
 //caps word
 #define CAPS_WORD_IDLE_TIMEOUT 0 //disable timeout

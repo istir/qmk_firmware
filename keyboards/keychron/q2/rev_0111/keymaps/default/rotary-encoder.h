@@ -7,7 +7,7 @@
 
 #include QMK_KEYBOARD_H
 
-const int VOLUME_MULTIPLICATION                    = 2;
+const int VOLUME_MULTIPLICATION                    = 1;
 const int MAX_NUMBER_OF_CLOCKWISE_ROTATIONS        = 1;
 const int MAX_NUMBER_OF_COUNTERCLOCKWISE_ROTATIONS = 2;
 
@@ -61,7 +61,9 @@ void handle_knob_rotation(bool clockwise) {
         //* when fn2 is pressed
         if (get_fn2_pressed_state()) {
             clockwise ? rgblight_increase_val() : rgblight_decrease_val();
-            preset_brightnesses[current_preset] = rgb_matrix_config.hsv.v;
+            #ifdef USE_CUSTOM_RGB_PRESETS
+                preset_brightnesses[current_preset] = rgb_matrix_config.hsv.v;
+            #endif
             return;
         }
         //* when nothing is pressed

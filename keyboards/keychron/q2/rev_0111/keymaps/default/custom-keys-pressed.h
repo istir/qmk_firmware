@@ -13,7 +13,9 @@ void set_capslock_pressed_state(bool pressed) {
     custom_pressed_keys.caps_lock is_caps_word_on();
 #else
     custom_pressed_keys.caps_lock = pressed;
-    switch_to_preset(CAPS_LOCK_PRESET);
+    #ifdef USE_CUSTOM_RGB_PRESETS
+        switch_to_preset(CAPS_LOCK_PRESET);
+    #endif
 #endif
 }
 bool get_capslock_pressed_state(void) {
