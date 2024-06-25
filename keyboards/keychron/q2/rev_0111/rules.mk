@@ -28,6 +28,7 @@ CAPS_WORD_ENABLE = no
 RGB_MATRIX_CUSTOM_USER = yes
 COMBO_ENABLE = yes
 KEY_OVERRIDE_ENABLE = yes
+SWAP_CAPS_TO_CTRL = yes
 
 # Enter lower-power sleep mode when on the ChibiOS idle thread
 OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE

@@ -33,7 +33,7 @@ const key_override_t SEARCH_OVERRIDE_MAC_LIKE   = ko_make_with_layers_negmods_an
 const key_override_t EVERYTHING_SEARCH_OVERRIDE = ko_make_with_layers_negmods_and_options(MOD_MASK_GUI, KC_S, LWIN(LALT(KC_S)), (1 << 1), MOD_MASK_CSA, ko_option_no_reregister_trigger);
 const key_override_t CLOSE_WINDOW_OVERRIDE      = ko_make_with_layers_negmods_and_options(MOD_MASK_CA, KC_Q, LALT(KC_F4), (1 << 1), MOD_MASK_SG, ko_option_no_reregister_trigger);
 const key_override_t OPEN_TERMINAL_OVERRIDE     = ko_make_with_layers_negmods_and_options(MOD_MASK_GUI, KC_RETURN, LCTL(LALT(KC_LBRACKET)), (1 << 1), MOD_MASK_CSA, ko_option_no_reregister_trigger);
-
+const key_override_t CAPSLOCK_TOGGLE            = ko_make_with_layers_negmods_and_options(MOD_MASK_CTRL, KC_RCTL, KC_CAPS, ~0, MOD_MASK_SA, ko_option_no_reregister_trigger);
 //* Mac-like combos
 
 // const key_override_t COPY_OVERRIDE         = ko_make_with_layers_negmods_and_options(MOD_MASK_ALT, KC_C, LCTL(KC_C), ~0, MOD_MASK_CSG, ko_option_activation_negative_mod_up);
@@ -63,12 +63,7 @@ const key_override_t OPEN_TERMINAL_OVERRIDE     = ko_make_with_layers_negmods_an
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
-    &REGION_OVERRIDE_SCREENSHOT,
-    &CLOSE_WINDOW_OVERRIDE,
-    &OPEN_TERMINAL_OVERRIDE,
-    &SEARCH_OVERRIDE,
-    &SEARCH_OVERRIDE_MAC_LIKE,
-    &EVERYTHING_SEARCH_OVERRIDE,
+    &REGION_OVERRIDE_SCREENSHOT, &CLOSE_WINDOW_OVERRIDE, &OPEN_TERMINAL_OVERRIDE, &SEARCH_OVERRIDE, &SEARCH_OVERRIDE_MAC_LIKE, &EVERYTHING_SEARCH_OVERRIDE,
     // mac
     // &COPY_OVERRIDE,
     // &CUT_OVERRIDE,

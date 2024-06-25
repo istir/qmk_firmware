@@ -18,27 +18,27 @@
 
 #define DEFAULT_LAYER_KNOB_PRESS_ACTION KC_MPLY
 
-
-
 #include "custom-keys-shortcuts.h"
 
 #ifdef USE_CUSTOM_RGB_PRESETS
-    #include "rgb-light.h"
+#    include "rgb-light.h"
 #endif
 
 #include "custom-keys-pressed.h"
 
 #ifdef USE_MANUAL_KNOB_CONTROL
-    #include "rotary-encoder.h"
+#    include "rotary-encoder.h"
 #endif
 #ifdef CAPS_WORD_ENABLE
-    #include "custom-caps-word.h"
-    #define DEFAULT_CAPS_KEY CAPSWRD
-    // #define DEFAULT_HOME_KEY TD(TD_FULL_SCREENSHOT)
-#else 
-    #define DEFAULT_CAPS_KEY KC_CAPS
-    // #define DEFAULT_HOME_KEY KC_HOME
-#endif
+#    include "custom-caps-word.h"
+#    define DEFAULT_CAPS_KEY CAPSWRD
+// #define DEFAULT_HOME_KEY TD(TD_FULL_SCREENSHOT)
+#else
+#    ifdef SWAP_CAPS_TO_CTRL
+#        define DEFAULT_CAPS_KEY KC_RCTL
+#    else
+#        define DEFAULT_CAPS_KEY KC_CAPS
+#    endif
 
 enum layers{
     MAC_BASE,
@@ -53,11 +53,11 @@ enum custom_keycodes {
     KC_LAUNCHPAD
 };
 
-#define KC_WAVE S(KC_GRV)
-#define KC_TASK LGUI(KC_TAB)
-#define KC_FLXP LGUI(KC_E)
-#define KC_MCTL KC_MISSION_CONTROL
-#define KC_LPAD KC_LAUNCHPAD
+#    define KC_WAVE S(KC_GRV)
+#    define KC_TASK LGUI(KC_TAB)
+#    define KC_FLXP LGUI(KC_E)
+#    define KC_MCTL KC_MISSION_CONTROL
+#    define KC_LPAD KC_LAUNCHPAD
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MAC_BASE] = LAYOUT_ansi_67(
@@ -96,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS,                            KC_TRNS, KC_TRNS,  KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS)
 };
 
-#if defined(ENCODER_MAP_ENABLE) && !defined(USE_MANUAL_KNOB_CONTROL)
+#    if defined(ENCODER_MAP_ENABLE) && !defined(USE_MANUAL_KNOB_CONTROL)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [MAC_BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [WIN_BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
@@ -104,7 +104,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [_FN2]     = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
     [_FN3]     = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI) },
 };
-#endif
+#    endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -122,7 +122,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 host_consumer_send(0);
             }
             return false;  // Skip all further processing of this key
-            #ifdef USE_MANUAL_KNOB_CONTROL
+#    ifdef USE_MANUAL_KNOB_CONTROL
         case DEFAULT_LAYER_KNOB_PRESS_ACTION:
            return process_play_pause_rotary_encoder(record);
         case MO(_FN2):
@@ -131,7 +131,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case MO(_FN3):
             set_fn2_pressed_state(record->event.pressed);
             return true;
-            #endif
+#    endif
         case DEFAULT_CAPS_KEY:
             set_capslock_pressed_state(record->event.pressed);
             return true;
