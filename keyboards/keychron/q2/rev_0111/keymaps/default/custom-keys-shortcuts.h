@@ -9,6 +9,7 @@ enum combos {
     // SAVE_AMD_VIDEO,
     RECORD_VIDEO,
     FULL_SCREENSHOT,
+    CAPSLOCK_TOGGLE,
     CUSTOM_COMBO_LENGTH
 };
 const uint16_t COMBO_LEN = CUSTOM_COMBO_LENGTH; // number of combos
@@ -17,12 +18,15 @@ const uint16_t PROGMEM region_screenshot_combo[] = {KC_DEL, KC_HOME, COMBO_END};
 // const uint16_t PROGMEM save_amd_video_combo[]    = {KC_BSLS, KC_BACKSPACE, COMBO_END};
 const uint16_t PROGMEM record_video_combo[]    = {KC_BSLS, KC_HOME, COMBO_END};
 const uint16_t PROGMEM full_screenshot_combo[] = {KC_BSLS, KC_DEL, COMBO_END};
+const uint16_t PROGMEM capslock_toggle_combo[] = {KC_LCTL, KC_RCTL, COMBO_END};
 
 combo_t key_combos[CUSTOM_COMBO_LENGTH] = {
 
     [REGION_SCREENSHOT] = COMBO(region_screenshot_combo, KC_PRINT_SCREEN),
     [RECORD_VIDEO]      = COMBO(record_video_combo, LWIN(LCTL(KC_BSLS))),
-    [FULL_SCREENSHOT]   = COMBO(full_screenshot_combo, KC_F9)};
+    [FULL_SCREENSHOT]   = COMBO(full_screenshot_combo, KC_F9),
+    [CAPSLOCK_TOGGLE]   = COMBO(capslock_toggle_combo, KC_CAPS)
+};
 
 #endif
 
@@ -33,7 +37,7 @@ const key_override_t SEARCH_OVERRIDE_MAC_LIKE   = ko_make_with_layers_negmods_an
 const key_override_t EVERYTHING_SEARCH_OVERRIDE = ko_make_with_layers_negmods_and_options(MOD_MASK_GUI, KC_S, LWIN(LALT(KC_S)), (1 << 1), MOD_MASK_CSA, ko_option_no_reregister_trigger);
 const key_override_t CLOSE_WINDOW_OVERRIDE      = ko_make_with_layers_negmods_and_options(MOD_MASK_CA, KC_Q, LALT(KC_F4), (1 << 1), MOD_MASK_SG, ko_option_no_reregister_trigger);
 const key_override_t OPEN_TERMINAL_OVERRIDE     = ko_make_with_layers_negmods_and_options(MOD_MASK_GUI, KC_RETURN, LCTL(LALT(KC_LBRACKET)), (1 << 1), MOD_MASK_CSA, ko_option_no_reregister_trigger);
-const key_override_t CAPSLOCK_TOGGLE            = ko_make_with_layers_negmods_and_options(MOD_MASK_CTRL, KC_RCTL, KC_CAPS, ~0, MOD_MASK_SA, ko_option_no_reregister_trigger);
+// const key_override_t CAPSLOCK_TOGGLE            = ko_make_with_layers_negmods_and_options(MOD_MASK_CTRL, KC_RCTL, KC_CAPS, (1 << 1), MOD_MASK_SA, ko_option_no_reregister_trigger);
 //* Mac-like combos
 
 // const key_override_t COPY_OVERRIDE         = ko_make_with_layers_negmods_and_options(MOD_MASK_ALT, KC_C, LCTL(KC_C), ~0, MOD_MASK_CSG, ko_option_activation_negative_mod_up);

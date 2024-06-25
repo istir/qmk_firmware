@@ -38,3 +38,6 @@
 //caps word
 #define CAPS_WORD_IDLE_TIMEOUT 0 //disable timeout
 #define CAPS_WORD_NO_AUTO_DEACTIVATION //disable automatic deactivation on some keys 
+
+// caps as ctrl
+#define SWAP_CAPS_TO_CTRL
